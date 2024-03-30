@@ -6,20 +6,19 @@ const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
-  const [mostrarError, setMostrarError] = useState("false");
+  const [mostrarError, setMostrarError] = useState(false);
   const [mensaje, setMensaje] = useState("");
-  const [mostrarMensaje, setMostrarMensaje] = useState("false");
+  const [mostrarMensaje, setMostrarMensaje] = useState(false);
 
   function handleSubmit(event) {
-    const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    event.preventDefoult();
-    if(name.length() < 5 || emailRegex.test(email)) {
+    event.preventDefault();
+    if (name.length < 5 || !emailRegex.test(email)) {
       setError("Por favor verifique su información nuevamente");
       setMostrarError(true);
     } else {
-      console.log("Formulario enviado correctamente");
-      setMensaje(`Gracias ${name}, te contactaremos cuando antes vía email`);
+      setMensaje(`Gracias ${name}, te contactaremos cuando antes vía mail`);
       setMostrarMensaje(true);
     }
   }
@@ -41,7 +40,7 @@ const Form = () => {
         <button>Enviar</button>
       </form>
       {mostrarError ? error : null}
-      {mostrarMensaje ? mensaje : true}
+      {mostrarMensaje ? mensaje : null}
     </div>
   );
 };
