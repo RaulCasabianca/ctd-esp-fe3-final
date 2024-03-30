@@ -9,5 +9,5 @@ export const fetchDentists = async () => {
     } catch (error) {
         console.error("Error fetching dentists:", error);
         throw error;
-    }
+    };
 };

@@ -3,7 +3,6 @@ import Card from "../common/Card";
 import { ContextGlobal } from "../../context/ContextProvider";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Home = () => {
   const { dentists } = useContext(ContextGlobal);
 

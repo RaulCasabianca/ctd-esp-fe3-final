@@ -2,9 +2,9 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { BrowserRouter, Outlet } from "react-router-dom";
-import { ContextProvider } from "../../context/ContextProvider";
+import { ContextGlobal } from "../../context/ContextProvider";
 
-const Layout = () => {
+function Layout() {
     return (
         <>
             <Navbar />
